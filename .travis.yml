@@ -3,15 +3,15 @@ services:
   - docker
 
 script:
-  - docker build -t mannydesigns/node .
-  - docker images mannydesigns/node
+  - docker build -t yijv/node .
+  - docker images yijv/node
 
 before_deploy:
-  - docker login -u yijv -p Yan.li124
+  - docker login docker.io -u yijv -p Tangelo93
 
 deploy:
   provider: script
-  script: docker push mannydesigns/node
+  script: docker push yijv/node
   skip_cleanup: true
   on:
     branch: master
